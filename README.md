@@ -17,5 +17,5 @@ Possible HTML link that links to milktea-delivery would be AWESOME!<br />
 1. a gif player! but seems not compatable with every gif file..need fixing
 2. a timer! ...that trys to mimic the function of a SIMPLE clock.. still has some performance issue (cost too much CPU)
 
-# Current progress
+# Check current progress
 run 'python main.py' under root folder

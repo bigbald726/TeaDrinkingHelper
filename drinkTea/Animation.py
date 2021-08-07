@@ -7,9 +7,8 @@ from platform import system
 class Animation:
     def __init__(self):
         self.musicURL = ''
-        self.root = tkinter.Tk()  # create window
-        self.delay = 200  # delay in ms
-        self.move_speed = 1  # change how fast the pet moves in pixels
+        self.root = tkinter.Tk()
+        self.delay = 200
 
         # initialize frame arrays
         self.animation = [tkinter.PhotoImage(file=os.path.abspath('src/gif/test.gif'),
@@ -49,7 +48,7 @@ class Animation:
         self.label.configure(image=frame)
 
         i += 1
-
+        print("this is " + i + " image")
         if i == len(animation_arr):
             # reached end of this animation, decide on the next animation
             self.root.after(self.delay, self.update, 0)  # last-two items are attributes for update()
@@ -70,7 +69,7 @@ class Animation:
     def run(self):
         pygame.mixer.init()
         self.playSound()
-        self.root.after(self.delay, self.update, 0)  # start on idle
+        self.root.after(self.delay, self.update, 0)
         self.root.mainloop()
 
     def quit(self):

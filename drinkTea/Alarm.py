@@ -10,14 +10,14 @@ import winsound
 
 
 class Alarm:
-    def __init__(self):
+    def __init__(self, hour, minute, second):
         self.musicURL = ""
         self.t = time.localtime()
         self.now = time.strftime("%H %M %S", self.t).split(" ")
         print("now is " + self.now[0] + " : " + self.now[1] + " : " + self.now[2])
-        self.hour = input("your hour?")
-        self.minute = input("and the minute?")
-        self.second = input("and the second?")
+        self.hour = hour
+        self.minute = minute
+        self.second = second
 
     def AlarmClock(self):
         now = time.strftime("%H %M %S", self.t).split(" ")

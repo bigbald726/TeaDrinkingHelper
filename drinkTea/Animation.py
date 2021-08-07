@@ -41,7 +41,7 @@ class Animation:
 
         self.root.geometry('%dx%d+%d+%d' % (320, 270, screen_width/2-160, 0))
 
-    def update(self, i, curr_animation):
+    def update(self, i):
         # print("Currently: %s" % curr_animation)
         self.root.attributes('-topmost', True)  # put window on top
         animation_arr = self.animation
@@ -49,12 +49,12 @@ class Animation:
         self.label.configure(image=frame)
 
         i += 1
+
         if i == len(animation_arr):
             # reached end of this animation, decide on the next animation
-            next_animation = 'idle'
-            self.root.after(self.delay, self.update, 0, next_animation)
+            self.root.after(self.delay, self.update, 0)  # last-two items are attributes for update()
         else:
-            self.root.after(self.delay, self.update, i, curr_animation)
+            self.root.after(self.delay, self.update, i)
 
     def onLeftClick(self, event):
         self.quit()
@@ -70,7 +70,7 @@ class Animation:
     def run(self):
         pygame.mixer.init()
         self.playSound()
-        self.root.after(self.delay, self.update, 0, 'idle')  # start on idle
+        self.root.after(self.delay, self.update, 0)  # start on idle
         self.root.mainloop()
 
     def quit(self):

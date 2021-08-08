@@ -1,13 +1,13 @@
 # <em>TeaDrinkingHelper</em>
-a simple pygame with alarm function to keep you hydrated everyday!<br />
-pure python3 project!
+A simple pygame with alarm function to keep you hydrated every day! <br />
+Pure python3 alert!
 
 
 
 # Goal
-Fancy cute little liteweight GUI that display current time and remind user to drink water based on set time!<br />
-Click-disappear player w/ sound that always shows on the very top of the screen!<br />
-Possible HTML link that links to milktea-delivery would be AWESOME!<br />
+1. Fancy cute little lightweight GUI that display current time and remind user to drink water based on set time!<br />
+2. Click-disappear player w/ sound that always shows on the very top of the screen!<br />
+3. Possible HTML link that links to MilkTea-delivery websites/apps would be AWESOME!<br />
 
 # What's under developing
 1. fixing button click malfunction

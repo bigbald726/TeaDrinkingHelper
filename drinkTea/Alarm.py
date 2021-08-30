@@ -6,7 +6,7 @@
 """
 
 import time
-import winsound
+# import winsound
 
 
 class Alarm:
@@ -29,6 +29,6 @@ class Alarm:
         print(totalWaitTime)
         time.sleep(totalWaitTime)
 
-    def playAlarm(self):
-        print("playing...")
-        winsound.PlaySound(self.musicURL, winsound.SND_FILENAME)
+    # def playAlarm(self):
+    #     print("playing...")
+    #     winsound.PlaySound(self.musicURL, winsound.SND_FILENAME)

@@ -7,9 +7,9 @@ from platform import system
 class Animation:
     def __init__(self):
         self.musicURL = ''
-        self.root = tkinter.Tk()
+        self.root = tkinter.Toplevel()
         self.delay = 200
-
+        self.speaker = pygame.mixer.music
         # initialize frame arrays
         self.animation = [tkinter.PhotoImage(file=os.path.abspath('src/gif/test.gif'),
                                              format='gif -index %i' % i) for i in range(24)]
@@ -48,7 +48,6 @@ class Animation:
         self.label.configure(image=frame)
 
         i += 1
-        print("this is " + i + " image")
         if i == len(animation_arr):
             # reached end of this animation, decide on the next animation
             self.root.after(self.delay, self.update, 0)  # last-two items are attributes for update()
@@ -56,6 +55,7 @@ class Animation:
             self.root.after(self.delay, self.update, i)
 
     def onLeftClick(self, event):
+        self.speaker.stop()
         self.quit()
 
     def onKeyPress(self, event):
@@ -63,8 +63,8 @@ class Animation:
             self.quit()
 
     def playSound(self):
-        pygame.mixer.music.load(self.musicURL)
-        pygame.mixer.music.play(loops=-1)
+        self.speaker.load(self.musicURL)
+        self.speaker.play(loops=-1)
 
     def run(self):
         pygame.mixer.init()
